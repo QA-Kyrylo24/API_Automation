@@ -1,0 +1,23 @@
+{
+  "name": "api_automation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "newman run NASA.postman_collection.json -r cli,html --reporter-html-export reports/report.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@types/node": "^24.2.0",
+    "dotenv": "^17.2.1",
+    "newman": "^4.6.1",
+    "newman-reporter-html": "^1.0.5",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.2"
+  }
+}

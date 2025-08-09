@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "ba903b3a-27e0-45c5-8444-27f899d1b755",
+		"name": "NASA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26830308"
+	},
+	"item": [
+		{
+			"name": "api_key",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"pm.test(\"Response has 'date' and 'title'\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.date).to.eql(\"2025-08-04\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/planetary/apod?api_key={{x-api-key}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"planetary",
+						"apod"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "{{x-api-key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "start_date&start_date",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.nasa.gov/planetary/apod?start_date=2025-07-01&end_date=2025-07-31",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"planetary",
+						"apod"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "api_key",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "start_date",
+							"value": "2025-07-01"
+						},
+						{
+							"key": "end_date",
+							"value": "2025-07-31"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "date",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.nasa.gov/planetary/apod?date=2025-07-04",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"planetary",
+						"apod"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2025-07-04"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "count",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.nasa.gov/planetary/apod?count=3",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"planetary",
+						"apod"
+					],
+					"query": [
+						{
+							"key": "count",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "thumb",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{x-api-key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.nasa.gov/planetary/apod?count=3",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"planetary",
+						"apod"
+					],
+					"query": [
+						{
+							"key": "count",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {\r",
+					"    pm.response.to.have.status(200);\r",
+					"});\r",
+					"\r",
+					"pm.test(\"Content-Type is JSON\", function () {\r",
+					"     pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "x-api-key",
+			"value": "JzaeM8dMrWZzUG3ZdpLQa2epUNbO13aSFosayUY4",
+			"type": "string"
+		}
+	]
+}

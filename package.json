@@ -13,6 +13,7 @@
     "@playwright/test": "^1.54.2",
     "@types/node": "^24.2.0",
     "dotenv": "^17.2.1",
+    "joi": "^18.0.0",
     "newman": "^4.6.1",
     "newman-reporter-html": "^1.0.5",
     "typescript": "^5.9.2"

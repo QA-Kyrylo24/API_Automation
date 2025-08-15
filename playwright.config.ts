@@ -36,8 +36,15 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'nasa-api',
+      testDir: './tests/nasa',
+      use: { baseURL: 'https://api.nasa.gov', },
+    },
+
+        {
+      name: 'restfull-booker',
+      testDir: './tests/restfull-booker',
+      use: { baseURL: 'https://restful-booker.herokuapp.com/', },
     },
 
     // {
